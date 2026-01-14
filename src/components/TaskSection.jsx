@@ -25,7 +25,8 @@ export const TaskSection = () => {
       {task.map((task, index) => (
         <div>
           <p key={index}>{task.newTask}</p>
-          <p>Completed: {isCompleted ? 'yes' : 'No'}</p>
+          <button onClick={toggleIsCompleted}>{isCompleted ? 'Completed' : 'Not completed'}</button>
+         
         </div>
       ))}
     </section>    
