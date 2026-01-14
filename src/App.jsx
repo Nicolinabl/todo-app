@@ -1,5 +1,15 @@
+
+import { TaskSection } from "./components/TaskSection"
+import { HeaderSection
+ } from "./components/HeaderSection"
+import { AddTaskSection } from "./components/AddTaskSection"
+
 export const App = () => {
   return (
-    <h1>React Boilerplate</h1>
+    <>
+      <HeaderSection />
+      <AddTaskSection />
+      <TaskSection />
+    </>
   )
 }
