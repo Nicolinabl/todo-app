@@ -2,13 +2,15 @@ import { create } from 'zustand'
 
 export const useTodoStore = create((set) => ({
   // CREATE STATE = what is in the store (initial state): Array of tasks, if task is completed, remove task 
-  task: ['Build app', 'Do some coding', 'Take a break', 'practice react'],
+  task: [ ],
   isCompleted: false,
   removeTask: false,
 
   // SET STATE = change what is in the store
   // Add task
-  setTask: (newTask) => set({ task: newTask}),
+  addTask: (newTask) => set((state) => ({
+    task: [...state.task, { newTask, isCompleted: false}]
+  })),
 
   // Toggle between completed/not completed
   toggleIsCompleted: () => set((state) => ({

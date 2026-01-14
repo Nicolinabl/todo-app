@@ -8,7 +8,7 @@ export const App = () => {
   return (
     <>
       <HeaderSection />
-      <AddTaskSection />
+      {/* <AddTaskSection /> */}
       <TaskSection />
     </>
   )

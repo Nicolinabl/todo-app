@@ -1,13 +1,30 @@
 import { useTodoStore } from "../stores/useTodoStore"
 
 export const TaskSection = () => {
-  const { task, isCompleted, removeTask, toggleIsCompleted } = useTodoStore()
+  const task = useTodoStore(state => state.task)
+  const isCompleted = useTodoStore(state => state.isCompleted)
+  const removeTask = useTodoStore(state => state.removeTask)
+  const addTask = useTodoStore(state => state.addTask)
+  const toggleIsCompleted = useTodoStore(state => state.toggleIsCompleted)
 
+  const handleAddTask = (e) => {
+    e.preventDefault()
+    const newTask = e.target.taskInfo.value
+    addTask(newTask)
+    e.target.taskInfo.value = ''
+
+  }
+  
   return (
     <section>
-      {task.map(task => (
+      <form onSubmit={handleAddTask}>
+        <input type="text" name="taskInfo"/>
+        <button type="submit">Add task</button>
+      </form>
+
+      {task.map((task, index) => (
         <div>
-          <p key={task.id}>{task}</p>
+          <p key={index}>{task.newTask}</p>
           <p>Completed: {isCompleted ? 'yes' : 'No'}</p>
         </div>
       ))}
