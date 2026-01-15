@@ -15,7 +15,8 @@ export const useTodoStore = create((set) => ({
   removeTask: (id) => set((state) => ({ task: state.task.filter(task => task.id !== id) })),
 
   // Toggle between completed/not completed
-  toggleIsCompleted: (id) => set((state) => ({ task: state.task.map(task => task.id === id ? {...task, isCompleted: !task.isCompleted}: task)})),
- 
+  toggleIsCompleted: (id) => set((state) => ({ task: state.task.map(task => task.id === id ? {...task, isCompleted: !task.isCompleted}: task)})), 
 }))
+
+
 

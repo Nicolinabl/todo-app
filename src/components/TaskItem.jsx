@@ -1,5 +1,6 @@
 import { useTodoStore } from '../stores/useTodoStore'
 import { styled } from 'styled-components'
+import { BinIcon, CheckIcon } from './Icons'
 
 export const TaskItem = ({task}) => {
   const removeTask = useTodoStore(state => state.removeTask)
@@ -7,9 +8,9 @@ export const TaskItem = ({task}) => {
   
   return (
     <StyledDiv>
-      <button onClick={() => toggleIsCompleted(task.id)}>{task.isCompleted ? 'Completed' : 'Not completed'}</button>
+      <StyledButton onClick={() => toggleIsCompleted(task.id)}>{task.isCompleted ? <CheckIcon /> : ''}</StyledButton>
       <P>{task.newTask}</P>
-      <button onClick={() => removeTask(task.id)}>Delete</button>
+      <button onClick={() => removeTask(task.id)}><BinIcon /></button>
     </StyledDiv>
   )
 }
@@ -36,4 +37,14 @@ const P = styled.p`
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 300;
+`
+
+const StyledButton = styled.button`
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E9D8F5;
 `
