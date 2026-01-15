@@ -1,11 +1,18 @@
 import { useTodoStore } from "../stores/useTodoStore"
 import { TaskItem } from "./TaskItem"
+import { Relax } from './Icons'
+import { styled } from 'styled-components'
 
 export const TaskSection = () => {
   const task = useTodoStore(state => state.task)
 
   if (task.length === 0) {
-    return <p>No tasks</p>
+    return (
+      <>
+        <P>Relax, there is nothing you need to do...</P>
+        <Relax />
+      </>
+    )
   }
 
   return (
@@ -16,3 +23,10 @@ export const TaskSection = () => {
     </>  
   )
 }
+
+const P = styled.p`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #79738E;
+`
