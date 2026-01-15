@@ -5,12 +5,10 @@ export const TaskSection = () => {
   const task = useTodoStore(state => state.task)
 
   return (
-    <section>
-      <ul>
-        {task.map(task => (
-          <TaskItem key={task.id} task={task} />
+    <>
+      {task.map(task => (
+        <TaskItem key={task.id} task={task} />
         ))}
-      </ul>
-    </section>    
+    </>  
   )
 }

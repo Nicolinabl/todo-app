@@ -1,14 +1,19 @@
 
-import { HeaderSection } from "./components/HeaderSection"
-import { AddTaskForm } from "./components/AddTaskForm"
+import { Header } from "./components/Header"
+import { AddTask } from "./components/AddTask"
 import { TaskSection } from "./components/TaskSection"
+import { GlobalStyle } from "./GlobalStyles"
+import { PageWrapper } from "./PageWrapper"
 
 export const App = () => {
   return (
     <>
-      <HeaderSection />
-      <AddTaskForm />
-      <TaskSection />
+      <GlobalStyle />
+      <PageWrapper>
+        <Header />
+        <AddTask />
+        <TaskSection />
+      </PageWrapper>
     </>
   )
 }

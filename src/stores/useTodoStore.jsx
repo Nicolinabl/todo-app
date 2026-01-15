@@ -1,9 +1,9 @@
 import { create } from 'zustand'
 
 export const useTodoStore = create((set) => ({
-  // CREATE STATE = what is in the store (initial state): Array of tasks, if task is completed, remove task 
+  // CREATE STATE = what is in the store (initial state): Array of tasks, if task is completed, remove task option
   task: [],
-  // isCompleted: false,
+  isCompleted: false,
   removeTask: false,
 
   // SET STATE = change what is in the store
