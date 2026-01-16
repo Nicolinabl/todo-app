@@ -25,7 +25,7 @@ const StyledForm = styled.form`
   width: 100%;
   max-width: 500px;
   min-width: 300px;
-  padding: 10px 30px;
+  padding: 10px 5px;
   margin-bottom: 15px;
 `
 
