@@ -14,8 +14,8 @@ export const AddTask = () => {
   return (
     <StyledForm onSubmit={handleAddTask}>
       <StyledDiv>
-      <StyledInput type="text" name="taskInfo" placeholder="Add a task..."/>
-      <StyledButton type="submit">+</StyledButton>
+      <StyledInput type="text" name="taskInfo" placeholder="I need to..."/>
+      <StyledButton type="submit"><P>+</P></StyledButton>
       </StyledDiv>
     </StyledForm>
   )
@@ -32,6 +32,7 @@ const StyledForm = styled.form`
 const StyledInput = styled.input`
   flex: 1;
   font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   border-radius: 12px;
   border: 1px solid #F3E8F4;
   padding: 8px 12px;
@@ -48,8 +49,8 @@ const StyledDiv = styled.div`
 `
 
 const StyledButton = styled.button`
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   background: #E1CBED;
   border: none;
   border-radius: 5px;
@@ -58,4 +59,9 @@ const StyledButton = styled.button`
   &:hover {
     transform: scale(1.1);
   }
+`
+
+const P = styled.p`
+  font-size: 20px;
+  margin: 0;
 `

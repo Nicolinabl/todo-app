@@ -6,7 +6,7 @@ export const Header = () => {
 
   return (
     <StyledHeader>
-      <H1>Get on it</H1>
+      <H1>Get it done</H1>
       <H2>Stay organized, stay productive</H2>
       <P>Todos: {task.length} </P>
     </StyledHeader>
@@ -17,6 +17,8 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 2px solid #F3E8F4;
+  margin-bottom: 30px;
 `
 
 const H1 = styled.h1`
@@ -27,7 +29,7 @@ const H2 = styled.h2`
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   font-weight: 400;
-  color: #79738E;
+  color: #756F8B;
 `
 
 const P = styled.p`

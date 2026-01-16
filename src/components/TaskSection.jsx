@@ -1,6 +1,6 @@
 import { useTodoStore } from "../stores/useTodoStore"
 import { TaskItem } from "./TaskItem"
-import { Relax } from './Icons'
+import { RelaxIcon } from './Icons'
 import { styled } from 'styled-components'
 
 export const TaskSection = () => {
@@ -9,8 +9,8 @@ export const TaskSection = () => {
   if (task.length === 0) {
     return (
       <>
-        <P>Relax, there is nothing you need to do...</P>
-        <Relax />
+        <P>Relax, there is nothing on your list</P>
+        <RelaxIcon />
       </>
     )
   }
@@ -28,5 +28,5 @@ const P = styled.p`
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #79738E;
+  color: #756F8B;
 `

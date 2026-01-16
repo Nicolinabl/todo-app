@@ -8,9 +8,11 @@ export const TaskItem = ({task}) => {
   
   return (
     <StyledDiv>
-      <StyledButton onClick={() => toggleIsCompleted(task.id)}>{task.isCompleted ? <CheckIcon /> : ''}</StyledButton>
-      <P>{task.newTask}</P>
-      <button onClick={() => removeTask(task.id)}><BinIcon /></button>
+      <StyledSpan>
+        <StyledButton onClick={() => toggleIsCompleted(task.id)}>{task.isCompleted ? <CheckIcon /> : ''}</StyledButton>
+        <P>{task.newTask}</P>
+      </StyledSpan>
+      <StyledBinButton onClick={() => removeTask(task.id)}><BinIcon /></StyledBinButton>
     </StyledDiv>
   )
 }
@@ -35,8 +37,9 @@ const StyledDiv = styled.div`
 
 const P = styled.p`
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 300;
+  margin: 0;
 `
 
 const StyledButton = styled.button`
@@ -47,4 +50,19 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   border: 1px solid #E9D8F5;
+  cursor: pointer;
 `
+
+const StyledBinButton = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
+`
+
+const StyledSpan = styled.span`
+  display: flex;
+  gap: 20px;
+  margin-left: 10px;
+  align-items: center;
+`
+
